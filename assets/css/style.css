@@ -1060,7 +1060,7 @@ label {
 }
 
 .navbar-brand img {
-  width: 170px;
+  width: 290px;
 }
 
 .navbar .dropdown-toggle::after {
@@ -1281,7 +1281,7 @@ label {
   }
 
   .navbar-brand img {
-    width: 130px;
+    width: 200px;
   }
 
   .navbar-collapse {
@@ -5046,7 +5046,16 @@ label {
 
 
 
+/* Logo of ksu formate*/
 
+.header-logo {
+  max-height: 65px; /* Adjust as needed */
+  width: auto;
+}
+.header-logo-mobile {
+  max-height: 40px; /* Adjust as needed */
+  width: auto;
+}
 /*====================
 47. Coming soon css 
 ======================*/
