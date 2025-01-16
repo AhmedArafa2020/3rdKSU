@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
 
 </head>
 
@@ -395,9 +396,18 @@
                             </div>
                             <div class="col-lg-4">
                                 <div class="video-wrapper">
-<!--                                    <a class="play-btn popup-youtube" href="#">-->
-<!--                                        <i class="fas fa-play"></i>-->
-<!--                                    </a>-->
+                                    <!-- Play Button -->
+                                    <a class="play-btn popup-video" href="#video-popup">
+                                        <i class="fas fa-play"></i>
+                                    </a>
+
+                                    <!-- Video Popup Content -->
+                                    <div id="video-popup" class="mfp-hide" >
+                                        <video controls autoplay >
+                                            <source src="assets/img/video/promo%20مؤتمر%20التمريض%20.mp4" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
 
 
                                 </div>
@@ -2426,10 +2436,6 @@ Co-designing, testing, and implementing technology in healthcare
         </div>
         <!-- schedule area end -->
 
-
-
-
-
         <!-- pricing area -->
         <div class="pricing-area bg pt-70 pb-80" id="targetDiv">
             <div class="container">
@@ -2682,10 +2688,6 @@ Co-designing, testing, and implementing technology in healthcare
         </div>
         <!-- partner area end -->
 
-
-
-
-
         <!-- gallery-area -->
         <div class="gallery-area py-120">
             <div class="container">
@@ -2743,13 +2745,6 @@ Co-designing, testing, and implementing technology in healthcare
             </div>
         </div>
         <!-- gallery-area end -->
-
-
-
-
-
-
-
         <!-- instagram -->
 
         <div class="contact-area py-120">
@@ -2924,6 +2919,7 @@ Co-designing, testing, and implementing technology in healthcare
 
 
     <!-- js -->
+
     <script src="assets/js/jquery-3.7.1.min.js"></script>
     <script src="assets/js/modernizr.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
@@ -2937,6 +2933,36 @@ Co-designing, testing, and implementing technology in healthcare
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/countdown.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.popup-video').magnificPopup({
+                type: 'inline', // Use 'inline' for local content
+                closeOnContentClick: true,
+                mainClass: 'mfp-fade',
+                removalDelay: 160,
+                preloader: false,
+                fixedContentPos: false,
+                callbacks: {
+                    open: function() {
+                        // Autoplay the video when the popup opens
+                        const video = document.querySelector('#video-popup video');
+                        if (video) {
+                            video.play();
+                        }
+                    },
+                    close: function() {
+                        // Pause the video when the popup closes
+                        const video = document.querySelector('#video-popup video');
+                        if (video) {
+                            video.pause();
+                        }
+                    }
+                }
+            });
+        });
+    </script>
 
 </body>
 
