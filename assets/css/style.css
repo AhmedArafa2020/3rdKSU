@@ -5531,7 +5531,36 @@ label {
   color: var(--theme-color);
   font-weight: 500;
 }
+.copyright-text {
+  display: flex; /* Use flexbox to align items */
+  align-items: center; /* Align items vertically */
+  gap: 10px; /* Add space between elements */
+}
 
+.powered-by {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Add space between "Powered by" text and icon */
+}
+
+.fav-icon {
+  width: 30px; /* Adjust icon size */
+  height: 30px;
+}
+
+.footer-menu {
+  list-style: none; /* Remove bullet points */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+  display: flex;
+  align-items: center; /* Align items vertically */
+  gap: 20px; /* Add space between menu items */
+}
+
+.footer-menu li a {
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Use the default text color */
+}
 
 @media all and (max-width: 1199px) {
   .footer-widget-box {

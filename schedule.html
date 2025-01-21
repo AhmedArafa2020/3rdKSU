@@ -1593,7 +1593,9 @@
                                 <div class="subscribe-form">
                                     <form action="#">
                                         <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Your Email">
+                                            <label>
+                                                <input type="email" class="form-control" placeholder="Your Email">
+                                            </label>
                                             <button class="theme-btn" type="submit">
                                                 <span class="far fa-paper-plane"></span> Subscribe
                                             </button>
@@ -1609,6 +1611,7 @@
                             <ul class="footer-list">
                                 <li><a href="about.html"><i class="fas fa-caret-right"></i> About Us</a></li>
                                 <li><a href="contact.html"><i class="fas fa-caret-right"></i> Contact Us</a></li>
+                                <!--                                <li><a href="terms.html"><i class="fas fa-caret-right"></i> Terms Of Service</a></li>-->
                             </ul>
                         </div>
                     </div>
@@ -1633,7 +1636,7 @@
                             </ul>
                             <div class="footer-request">
                                 <p>Book Your Ticket</p>
-                                <a href="https://afaq-lms.com/ar/one-courses-new/503" class="theme-btn">Register Now<i class="fas fa-arrow-right"></i></a>
+                                <a href="https://afaq-lms.com/en/one-courses-new/503" class="theme-btn">Register Conference<i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -1643,19 +1646,22 @@
         <div class="container">
             <div class="copyright">
                 <div class="row">
-                    <div class="col-md-6 align-self-center">
-                        <p class="copyright-text">
-                            &copy; Copyright <span id="date"></span> <a href="#"> HealthCare </a> All Rights Reserved.
+                    <div class="col-md-12 d-flex align-items-center justify-content-between"> <!-- Flex container -->
+                        <p class="copyright-text mb-0"> <!-- Remove default margin -->
+                            &copy; Copyright <span id="date"></span> <a href="#"> King Saud University </a> All Rights Reserved.
+                            <span class="powered-by">Powered by <a href="https://afaq-lms.com/en/homepage">AFAQ Health Education </a>
+                    <img src="assets/img/shape/favicon.ico" alt="icon" class="fav-icon">
+                </span>
                         </p>
-                    </div>
-                    <div class="col-md-6 align-self-center">
-                        <ul class="footer-menu">
+                        <ul class="footer-menu list-unstyled mb-0"> <!-- Remove default margin and list styling -->
                             <li><a href="contact.html">Support</a></li>
+                            <!-- Add more links here if needed -->
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
+
     </footer>
     <!-- footer area end -->
 
@@ -1679,7 +1685,43 @@
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/countdown.min.js"></script>
     <script src="assets/js/main.js"></script>
-
+    <script>
+        var url = 'https://wati-integration-prod-service.clare.ai/v2/watiWidget.js?16934';
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = url;
+        var options = {
+            "enabled":true,
+            "chatButtonSetting":{
+                "backgroundColor":"#ffffff",
+                "ctaText":"Chat with AFAQ",
+                "borderRadius":"25",
+                "marginLeft": "0",
+                "marginRight": "20",
+                "marginBottom": "20",
+                "ctaIconWATI":true,
+                "position":"right"
+            },
+            "brandSetting":{
+                "brandName":"AFAQ",
+                "brandSubTitle":"undefined",
+                "brandImg":"https://afaq-lms.com/afaq/imgs/Logo-Type-1v-2.png",
+                "welcomeText":"Hi there!\nHow can I help you?",
+                "messageText":"Hello, %0A I have a question about {{page_link}}",
+                "backgroundColor":"#ffffff",
+                "ctaText":"Chat with AFAQ Health Education",
+                "borderRadius":"25",
+                "autoShow":false,
+                "phoneNumber":"966506986979"
+            }
+        };
+        s.onload = function() {
+            CreateWhatsappChatWidget(options);
+        };
+        var x = document.getElementsByTagName('script')[0];
+        x.parentNode.insertBefore(s, x);
+    </script>
 </body>
 
 </html>
